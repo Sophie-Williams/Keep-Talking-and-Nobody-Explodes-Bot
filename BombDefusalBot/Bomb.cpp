@@ -23,7 +23,7 @@ Bomb::Bomb(int batteries, std::string serial, std::vector<std::string> ports, st
 
 void Bomb::Initialize() {
     IsLastSerialDigitOdd(_serial);
-    _serialHasVowel(_serial);
+    serialHasVowel(_serial);
     SetPorts(_ports);
 }
 
@@ -35,7 +35,7 @@ void Bomb::IsLastSerialDigitOdd(std::string serial) {
     lastSerialDigitOdd = false;
 }
 
-void Bomb::_serialHasVowel(std::string serial) {
+void Bomb::serialHasVowel(std::string serial) {
     for (char c : serial)
     {
         char tmp = tolower(c);
@@ -80,14 +80,6 @@ void Bomb::SetPorts(std::vector<std::string> ports) {
 const std::vector<std::string> indicators = std::vector<std::string>({ "snd", "clr", "car", "ind", "frq", "sig", "nsa", "msa", "trn", "bob", "frk" });
 const std::vector<std::string> portTypes = std::vector<std::string>({ "dvi", "parallel", "ps", "rj", "serial", "stereo" });
 
-const std::vector<std::vector<std::string> > symbolsTable({
-    std::vector<std::string>({ "oh", "tee", "lambda", "lightning", "kitty", "hotel", "backward see" }),
-    std::vector<std::string>({ "euro", "oh", "backward see", "quebec", "star", "hotel", "question" }),
-    std::vector<std::string>({ "copyright", "butt", "quebec", "psi", "partial three", "lambda", "star" }),
-    std::vector<std::string>({ "sigma", "paragraph", "bee", "kitty", "double psi", "question", "smiley" }),
-    std::vector<std::string>({ "psi", "smiley", "bee", "see", "paragraph", "caterpillar", "star" }),
-    std::vector<std::string>({ "sigma", "euro", "tracks", "diphthong", "psi", "en", "omega" })
-});
 const std::vector<std::string> passwords({
     "about", "after", "again", "below", "could", "every", "first", "found", "great", "house",
     "large", "learn", "never", "other", "place", "plant", "point", "right", "small", "sound",

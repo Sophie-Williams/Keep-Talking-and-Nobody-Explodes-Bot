@@ -1,17 +1,8 @@
 #include "SimonSaysModule.h"
 
-std::string SimonSaysModule::solveSimonSaysModule(std::string color, bool increment) {
+std::vector<std::string> SimonSaysModule::solveSimonSaysModule(std::string color) {
     char colorKey = color[0];
     std::string responseColor = getSimonSaysColor(colorKey);
-
-    if (increment) {
-        solveSimonSaysModuleIncrement(responseColor);
-    }
-
-    return responseColor;
-}
-
-std::vector<std::string> SimonSaysModule::solveSimonSaysModuleIncrement(std::string responseColor) {
     colorSequence.push_back(responseColor);
 
     return colorSequence;

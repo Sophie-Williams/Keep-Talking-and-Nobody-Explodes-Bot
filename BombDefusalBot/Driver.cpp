@@ -2,6 +2,7 @@
 #include "ButtonModule.h"
 #include "BasicWiresModule.h"
 #include "KeypadModule.h"
+#include "SimonSaysModule.h"
 
 int main(int argc, char* argv[])
 {
@@ -101,4 +102,23 @@ int main(int argc, char* argv[])
         }
     }
     */
+    while (1) {
+        while (1) {
+            std::string color;
+            std::cout << "Please enter the color: " << std::endl;
+            std::getline(std::cin, color);
+
+            if (color == "done") {
+                break;
+            }
+
+            SimonSaysModule *simonSaysModule = new SimonSaysModule();
+            std::vector<std::string> result = simonSaysModule->solveSimonSaysModule(color);
+            for (std::string color : result) {
+                std::cout << color << " ";
+            }
+        }
+    }
+
+    return 0;
 }

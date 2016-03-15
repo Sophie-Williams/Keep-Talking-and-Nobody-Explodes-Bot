@@ -71,6 +71,7 @@
     <ClCompile Include="Driver.cpp" />
     <ClCompile Include="KeypadModule.cpp" />
     <ClCompile Include="SimonSaysModule.cpp" />
+    <ClCompile Include="WhosOnFirstModule.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BasicWiresModule.h" />
@@ -78,6 +79,7 @@
     <ClInclude Include="ButtonModule.h" />
     <ClInclude Include="KeypadModule.h" />
     <ClInclude Include="SimonSaysModule.h" />
+    <ClInclude Include="WhosOnFirstModule.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

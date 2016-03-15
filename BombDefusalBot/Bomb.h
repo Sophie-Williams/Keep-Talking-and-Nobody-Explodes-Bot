@@ -21,7 +21,7 @@ class Bomb {
 private:
     void Initialize();
     void IsLastSerialDigitOdd(std::string serial);
-    void _serialHasVowel(std::string serial);
+    void serialHasVowel(std::string serial);
     void SetPorts(std::vector<std::string> ports);
 
 public:
@@ -95,4 +95,6 @@ extern bool _serialHasVowel;
 // TODO: assertions
 // TODO: sanitize (lower case) input
 // TODO: revisit enums for colors and constants
+// TODO: driver->bomb.cpp
+// TODO: end input prematurely on num limit
 #endif

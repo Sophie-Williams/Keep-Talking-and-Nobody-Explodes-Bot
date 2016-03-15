@@ -33,6 +33,9 @@
     <ClCompile Include="SimonSaysModule.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="WhosOnFirstModule.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bomb.h">
@@ -48,6 +51,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SimonSaysModule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WhosOnFirstModule.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
