@@ -7,7 +7,7 @@ std::vector<std::string> _ports;
 std::vector<std::string> _litIndicators;
 std::vector<std::string> _unlitIndicators;
 std::vector<int> _existingPorts(6, 0);
-bool lastSerialDigitOdd;
+bool lastSerialDigitIsOdd;
 bool _serialHasVowel;
 
 Bomb::Bomb(int batteries, std::string serial, std::vector<std::string> ports, std::vector<std::string> litIndicators, std::vector<std::string> unlitIndicators) {
@@ -18,21 +18,21 @@ Bomb::Bomb(int batteries, std::string serial, std::vector<std::string> ports, st
     _litIndicators = litIndicators;
     _unlitIndicators = unlitIndicators;
 
-    Initialize();
+    InitializeBomb();
 }
 
-void Bomb::Initialize() {
-    IsLastSerialDigitOdd(_serial);
+void Bomb::InitializeBomb() {
+    IslastSerialDigitIsOdd(_serial);
     serialHasVowel(_serial);
     SetPorts(_ports);
 }
 
-void Bomb::IsLastSerialDigitOdd(std::string serial) {
+void Bomb::IslastSerialDigitIsOdd(std::string serial) {
     if ((serial[(serial.length() - 1)] % 2) == 0) {
-        lastSerialDigitOdd = true;
+        lastSerialDigitIsOdd = true;
     }
 
-    lastSerialDigitOdd = false;
+    lastSerialDigitIsOdd = false;
 }
 
 void Bomb::serialHasVowel(std::string serial) {
@@ -79,17 +79,6 @@ void Bomb::SetPorts(std::vector<std::string> ports) {
 /*
 const std::vector<std::string> indicators = std::vector<std::string>({ "snd", "clr", "car", "ind", "frq", "sig", "nsa", "msa", "trn", "bob", "frk" });
 const std::vector<std::string> portTypes = std::vector<std::string>({ "dvi", "parallel", "ps", "rj", "serial", "stereo" });
-
-const std::vector<std::string> passwords({
-    "about", "after", "again", "below", "could", "every", "first", "found", "great", "house",
-    "large", "learn", "never", "other", "place", "plant", "point", "right", "small", "sound",
-    "spell", "still", "study", "their", "there", "these", "thing", "think", "three", "water",
-    "where", "which", "world", "would", "write"
-});
-const std::vector<std::string> morseWords({
-    "shell", "halls", "slick", "trick", "boxes", "leaks", "strobe", "bistro",
-    "flick", "bombs", "break", "brick", "steak", "sting", "vector", "beats"
-});
 */
 
 std::vector<std::string> &split(const std::string &s, char delim, std::vector<std::string> &elems) {

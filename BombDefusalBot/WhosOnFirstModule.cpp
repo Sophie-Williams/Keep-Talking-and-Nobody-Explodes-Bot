@@ -1,6 +1,6 @@
 #include "WhosOnFirstModule.h"
 
-std::unordered_map<std::string, std::string> displayPositions({
+const std::unordered_map<std::string, std::string> displayTextsToPositions({
     { "yes", "middle left" }, { "first", "top right" }, { "display", "bottom right" },
     { "okay", "top right" }, { "says", "bottom right" }, { "nothing", "middle left" },
     { "null", "bottom left" }, { "blank", "middle right" }, { "no", "bottom right" },
@@ -12,7 +12,7 @@ std::unordered_map<std::string, std::string> displayPositions({
     { "they are", "middle left" }, { "see", "bottom right" }, { "c", "top right" }, { "cee", "bottom right" }
 });
 
-std::unordered_map<std::string, std::vector<std::string> > wordLists({
+const std::unordered_map<std::string, std::vector<std::string> > wordsToWordLists({
     { "ready", std::vector<std::string>({ "yes", "okay", "what", "middle", "left", "press", "right", "blank", "ready" }) },
     { "first", std::vector<std::string>({ "left", "okay", "yes", "middle", "no", "right", "nothing", "uhhh", "wait", "ready", "blank", "what", "press", "first" }) },
     { "no", std::vector<std::string>({ "blank", "uhhh", "wait", "first", "what", "ready", "right", "yes", "nothing", "left", "press", "okay", "no" }) },
@@ -43,10 +43,10 @@ std::unordered_map<std::string, std::vector<std::string> > wordLists({
     { "like", std::vector<std::string>({ "you're", "next", "u", "ur", "hold", "done", "uh uh", "what?", "uh huh", "you", "like" }) }
 });
 
-std::string solveWhosOnFirstModulePosition(const std::string display) {
-    return displayPositions[display];
+std::string WhosOnFirstModule::solveWhosOnFirstModuleButtonPosition(const std::string displayText) {
+    return displayTextsToPositions.at(displayText);
 }
 
-std::vector<std::string> solveWhosOnFirstModuleWordList(const std::string word) {
-    return wordLists[word];
+std::vector<std::string> WhosOnFirstModule::solveWhosOnFirstModuleWordList(const std::string buttonText) {
+    return wordsToWordLists.at(buttonText);
 }

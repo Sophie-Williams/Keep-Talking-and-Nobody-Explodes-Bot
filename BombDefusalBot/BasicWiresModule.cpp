@@ -3,8 +3,7 @@
 std::string BasicWiresModule::solveBasicWiresModule(const std::vector<std::string> wires) {
     int numberOfWires = wires.size();
 
-    _ASSERT(numberOfWires >= 3);
-    _ASSERT(numberOfWires <= 6);
+    _ASSERT((numberOfWires >= 3) && (numberOfWires <= 6));
 
     switch (numberOfWires) {
     case 3:
@@ -22,7 +21,7 @@ std::string BasicWiresModule::solveBasicWiresModule(const std::vector<std::strin
 
         return "last";
     case 4:
-        if ((countWiresOfColor(wires, "red") > 1) && lastSerialDigitOdd) {
+        if ((countWiresOfColor(wires, "red") > 1) && lastSerialDigitIsOdd) {
             return "last red";
         }
 
@@ -40,7 +39,7 @@ std::string BasicWiresModule::solveBasicWiresModule(const std::vector<std::strin
 
         return "second";
     case 5:
-        if ((wires[(numberOfWires - 1)] == "black") && lastSerialDigitOdd) {
+        if ((wires[(numberOfWires - 1)] == "black") && lastSerialDigitIsOdd) {
             return "fourth";
         }
 
@@ -54,7 +53,7 @@ std::string BasicWiresModule::solveBasicWiresModule(const std::vector<std::strin
 
         return "first";
     case 6:
-        if ((countWiresOfColor(wires, "yellow") == 0) && lastSerialDigitOdd) {
+        if ((countWiresOfColor(wires, "yellow") == 0) && lastSerialDigitIsOdd) {
             return "third";
         }
 

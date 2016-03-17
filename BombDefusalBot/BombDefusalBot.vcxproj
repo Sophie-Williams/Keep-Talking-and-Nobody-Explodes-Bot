@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -18,13 +18,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -68,18 +68,32 @@
     <ClCompile Include="BasicWiresModule.cpp" />
     <ClCompile Include="Bomb.cpp" />
     <ClCompile Include="ButtonModule.cpp" />
+    <ClCompile Include="ComplicatedWiresModule.cpp" />
     <ClCompile Include="Driver.cpp" />
     <ClCompile Include="KeypadModule.cpp" />
+    <ClCompile Include="KnobModule.cpp" />
+    <ClCompile Include="MazeModule.cpp" />
+    <ClCompile Include="MemoryModule.cpp" />
+    <ClCompile Include="MorseCodeModule.cpp" />
+    <ClCompile Include="PasswordModule.cpp" />
     <ClCompile Include="SimonSaysModule.cpp" />
     <ClCompile Include="WhosOnFirstModule.cpp" />
+    <ClCompile Include="WireSequenceModule.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BasicWiresModule.h" />
     <ClInclude Include="Bomb.h" />
     <ClInclude Include="ButtonModule.h" />
+    <ClInclude Include="ComplicatedWiresModule.h" />
     <ClInclude Include="KeypadModule.h" />
+    <ClInclude Include="KnobModule.h" />
+    <ClInclude Include="MazeModule.h" />
+    <ClInclude Include="MemoryModule.h" />
+    <ClInclude Include="MorseCodeModule.h" />
+    <ClInclude Include="PasswordModule.h" />
     <ClInclude Include="SimonSaysModule.h" />
     <ClInclude Include="WhosOnFirstModule.h" />
+    <ClInclude Include="WireSequenceModule.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
