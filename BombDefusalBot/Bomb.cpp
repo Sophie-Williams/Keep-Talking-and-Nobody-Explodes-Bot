@@ -6,7 +6,7 @@ std::string _serial;
 std::vector<std::string> _ports;
 std::vector<std::string> _litIndicators;
 std::vector<std::string> _unlitIndicators;
-std::vector<int> _existingPorts(6, 0);
+std::vector<bool> _existingPorts(6, 0);
 bool lastSerialDigitIsOdd;
 bool _serialHasVowel;
 

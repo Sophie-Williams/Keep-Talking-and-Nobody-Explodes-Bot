@@ -14,7 +14,7 @@ extern std::vector<std::string> _unlitIndicators;
 extern int _batteries;
 extern std::vector<std::string> _litIndicators;
 extern int _strikes;
-extern std::vector<int> _existingPorts;
+extern std::vector<bool> _existingPorts;
 extern bool lastSerialDigitIsOdd;
 extern bool _serialHasVowel;
 

@@ -1,6 +1,6 @@
 #include "WireSequenceModule.h"
 
-unsigned short int A = 0x4, B = 0x2, C = 0x1;
+unsigned short A = 0x4, B = 0x2, C = 0x1;
 unsigned short WireSequenceModule::redCount = 0, WireSequenceModule::blueCount = 0, WireSequenceModule::blackCount = 0;
 unsigned short WireSequenceModule::redCuts[9] { C, B, A, A | C, B, A | C, A | B | C, A | B, B };
 unsigned short WireSequenceModule::blueCuts[9] { B, A | C, B, A, B, B | C, C, A | C, A };

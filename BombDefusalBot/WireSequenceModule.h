@@ -2,7 +2,7 @@
 
 class WireSequenceModule {
 private:
-    static unsigned short int redCount, blueCount, blackCount;
+    static unsigned short redCount, blueCount, blackCount;
     static unsigned short redCuts[9];
     static unsigned short blueCuts[9];
     static unsigned short blackCuts[9];
