@@ -18,7 +18,7 @@ const std::vector<std::string> MorseCodeModule::morseFrequencies({
 });
 
 std::string MorseCodeModule::solveMorseModule(const std::vector<std::string> lettersInMorse) {
-    int size = lettersInMorse.size();
+    size_t size = lettersInMorse.size();
     _ASSERT(size >= 3 && size <= 6);
 
     bool morseMatches[16] = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
@@ -37,7 +37,7 @@ std::string MorseCodeModule::solveMorseModule(const std::vector<std::string> let
                 matchPosition = j;
 
                 if (potentialWords == 1) {
-                    _ASSERT((matchPosition >= 0) && (matchPosition <= morseWords.size()));
+                    _ASSERT((matchPosition >= 0) && (matchPosition <= (int)morseWords.size()));
                     return morseFrequencies[matchPosition];
                 }
             }

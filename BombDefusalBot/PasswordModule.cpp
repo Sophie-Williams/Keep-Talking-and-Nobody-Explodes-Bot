@@ -9,7 +9,7 @@ std::string PasswordModule::solvePasswordModule(const std::string dialLetters, c
     {
         if (passwordMatches[i]) {
             bool match = false;
-            for (int j = 0; j < dialLetters.size(); ++j) {
+            for (size_t j = 0; j < dialLetters.size(); ++j) {
                 if (passwords[i][dialOffset] == dialLetters[j]) {
                     matchPosition = i;
                     match = true;
