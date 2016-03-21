@@ -10,6 +10,7 @@
 #include "WireSequenceModule.h"
 #include "PasswordModule.h"
 #include "KnobModule.h"
+
 int _strikes;
 int _batteries;
 std::string _serial;
