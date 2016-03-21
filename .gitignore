@@ -53,3 +53,5 @@ Temporary Items
 *.idb
 *.exe
 *.ilk
+*.opendb
+*.enc

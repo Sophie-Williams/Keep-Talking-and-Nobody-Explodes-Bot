@@ -1,9 +1,13 @@
 #include "PasswordModule.h"
 
-std::string PasswordModule::solvePasswordModule(const std::string dialLetters, const int dial) {
+unsigned short potentialPasswords = NUMBER_OF_PASSWORDS;
+short matchPosition = -1;
+bool passwordMatches[NUMBER_OF_PASSWORDS] = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
+
+std::string PasswordModule::solvePasswordModule(const int dialPosition, const std::string dialLetters) {
     _ASSERT(dialLetters.size() == DIAL_LETTERS);
-    _ASSERT((dial >= 1) && (dial <= 5));
-    int dialOffset = (dial - 1);
+    _ASSERT((dialPosition >= 1) && (dialPosition <= 5));
+    int dialOffset = (dialPosition - 1);
 
     for (size_t i = 0; i < NUMBER_OF_PASSWORDS; ++i)
     {
@@ -30,11 +34,20 @@ std::string PasswordModule::solvePasswordModule(const std::string dialLetters, c
         return passwords[matchPosition];
     }
     else {
-        return "More dials needed!";
+        return "";
     }
 
     // This should be unreachable code indicating a parsing error
     _ASSERT(false);
 
     return "error";
+}
+
+void PasswordModule::clear() {
+    potentialPasswords = NUMBER_OF_PASSWORDS;
+    matchPosition = -1;
+    for (int i = 0; i < NUMBER_OF_PASSWORDS; ++i)
+    {
+        passwordMatches[i] = 1;
+    }
 }

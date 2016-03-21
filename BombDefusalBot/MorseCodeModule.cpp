@@ -24,10 +24,10 @@ std::string MorseCodeModule::solveMorseModule(const std::vector<std::string> let
     bool morseMatches[16] = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
     // Break out early point
     int potentialWords = morseWords.size();
+    int matchPosition = (morseWords.size() - 1);
     for (size_t i = 0; i < size; ++i) {
         char letter = morseToLetters.at(lettersInMorse[i]);
 
-        int matchPosition = -1;
         for (size_t j = 0; j < morseWords.size(); ++j) {
             if (morseMatches[j] && (letter != morseWords[j][i])) {
                 morseMatches[j] = 0;
@@ -35,13 +35,12 @@ std::string MorseCodeModule::solveMorseModule(const std::vector<std::string> let
             }
             else if (morseMatches[j]) {
                 matchPosition = j;
-
-                if (potentialWords == 1) {
-                    _ASSERT((matchPosition >= 0) && (matchPosition <= (int)morseWords.size()));
-                    return morseFrequencies[matchPosition];
-                }
             }
-           
+
+            if (potentialWords == 1) {
+                _ASSERT((matchPosition >= 0) && (matchPosition <= (int)morseWords.size()));
+                return morseFrequencies[matchPosition];
+            }
         }
     }
 

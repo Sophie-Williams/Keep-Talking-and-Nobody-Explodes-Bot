@@ -1,10 +1,10 @@
 #include "KeypadModule.h"
 
 const std::string KeypadModule::symbolsTable[6][7] = {
-    { "oh", "tee", "lambda", "lightning", "kitty", "hotel", "backward see" },
-    { "euro", "oh", "backward see", "quebec", "star", "hotel", "question" },
-    { "copyright", "butt", "quebec", "psi", "partial three", "lambda", "star" },
-    { "sigma", "paragraph", "bee", "kitty", "double psi", "question", "smiley" },
+    { "oh", "tee", "lambda", "lightning", "kitty", "hotel", "backwardsee" },
+    { "euro", "oh", "backwardsee", "quebec", "star", "hotel", "question" },
+    { "copyright", "butt", "quebec", "doublepsi", "are", "lambda", "star" },
+    { "sigma", "paragraph", "bee", "kitty", "doublepsi", "question", "smiley" },
     { "psi", "smiley", "bee", "see", "paragraph", "caterpillar", "star" },
     { "sigma", "euro", "tracks", "diphthong", "psi", "en", "omega" }
 };

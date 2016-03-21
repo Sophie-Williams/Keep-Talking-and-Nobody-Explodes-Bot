@@ -69,7 +69,6 @@
     <ClCompile Include="Bomb.cpp" />
     <ClCompile Include="ButtonModule.cpp" />
     <ClCompile Include="ComplicatedWiresModule.cpp" />
-    <ClCompile Include="Driver.cpp" />
     <ClCompile Include="KeypadModule.cpp" />
     <ClCompile Include="KnobModule.cpp" />
     <ClCompile Include="MazeModule.cpp" />

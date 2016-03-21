@@ -11,10 +11,8 @@ private:
         "spell", "still", "study", "their", "there", "these", "thing", "think", "three", "water",
         "where", "which", "world", "would", "write"
     };
-    int potentialPasswords = NUMBER_OF_PASSWORDS;
-    int matchPosition = -1;
-    bool passwordMatches[NUMBER_OF_PASSWORDS] = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
 
 public:
-    std::string PasswordModule::solvePasswordModule(const std::string dialLetters, const int dial);
+    std::string PasswordModule::solvePasswordModule(const int dialPosition, const std::string dialLetters);
+    void clear();
 };

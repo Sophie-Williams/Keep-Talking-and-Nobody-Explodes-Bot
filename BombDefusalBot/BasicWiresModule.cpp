@@ -21,7 +21,7 @@ std::string BasicWiresModule::solveBasicWiresModule(const std::vector<std::strin
 
         return "last";
     case 4:
-        if ((countWiresOfColor(wires, "red") > 1) && lastSerialDigitIsOdd) {
+        if ((countWiresOfColor(wires, "red") > 1) && _lastSerialDigitOdd) {
             return "last red";
         }
 
@@ -39,7 +39,7 @@ std::string BasicWiresModule::solveBasicWiresModule(const std::vector<std::strin
 
         return "second";
     case 5:
-        if ((wires[(numberOfWires - 1)] == "black") && lastSerialDigitIsOdd) {
+        if ((wires[(numberOfWires - 1)] == "black") && _lastSerialDigitOdd) {
             return "fourth";
         }
 
@@ -53,7 +53,7 @@ std::string BasicWiresModule::solveBasicWiresModule(const std::vector<std::strin
 
         return "first";
     case 6:
-        if ((countWiresOfColor(wires, "yellow") == 0) && lastSerialDigitIsOdd) {
+        if ((countWiresOfColor(wires, "yellow") == 0) && _lastSerialDigitOdd) {
             return "third";
         }
 

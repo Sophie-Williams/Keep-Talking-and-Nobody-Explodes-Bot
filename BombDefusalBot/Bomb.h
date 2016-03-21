@@ -10,26 +10,58 @@
 
 extern std::string _serial;
 extern std::vector<std::string> _ports;
-extern std::vector<std::string> _unlitIndicators;
 extern int _batteries;
 extern std::vector<std::string> _litIndicators;
 extern int _strikes;
 extern std::vector<bool> _existingPorts;
-extern bool lastSerialDigitIsOdd;
+extern bool _lastSerialDigitOdd;
 extern bool _serialHasVowel;
 
 class Bomb {
 private:
-    void InitializeBomb();
-    void IslastSerialDigitIsOdd(std::string serial);
-    void serialHasVowel(std::string serial);
-    void SetPorts(std::vector<std::string> ports);
+    enum Commands {
+        QUIT = -1,
+        INITIALIZE,
+        BASIC_WIRES,
+        BUTTON,
+        KEYPAD,
+        SIMON_SAYS,
+        WHOS_ON_FIRST,
+        MEMORY,
+        MORSE_CODE,
+        COMPLICATED_WIRES,
+        WIRE_SEQUENCE,
+        MAZE,
+        PASSWORD,
+        KNOB
+    };
+    unsigned short currentMemoryStep;
+
+    void isLastSerialDigitOdd(std::string serial);
+    void doesSerialHaveVowel(std::string serial);
+    void setPorts(std::vector<std::string> ports);
+    short parseCommand(const std::string unparsedCommand);
+    int convertTextToInteger(std::string word);
+    void initializeBomb();
+    void handleBasicWiresModule();
+    void handleButtonModule();
+    void handleKeypadModule();
+    void handleSimonSaysModule();
+    void handleWhosOnFirstModule();
+    void handleMemoryModule();
+    void handleMorseCodeModule();
+    void handleComplicatedWiresModule();
+    void handleWireSequenceModule();
+    void handleMazeModule();
+    void handlePasswordModule();
+    void handleKnobModule();
 
 public:
-    Bomb(int batteries, std::string serial, std::vector<std::string> ports, std::vector<std::string> litIndicators, std::vector<std::string> unlitIndicators);
+    Bomb();
+    void handleCommands();
 };
 
-std::vector<std::string> &split(const std::string &s, char delim, std::vector<std::string> &elems);
+std::vector<std::string> &split(const std::string &s, std::vector<std::string> &elems, char delim = ' ');
 
 #endif
 
@@ -48,3 +80,16 @@ std::vector<std::string> &split(const std::string &s, char delim, std::vector<st
 // with limits, use constants? (e.g. memory can only be [1,4], dials have to have 6 letters
 // assert-> assert_expr?
 // str function in knob is bs
+// bomb commands to enum?
+// function naming case/convention
+// function ordering
+// split bomb init and handling back up?
+// replace asserts with error strings when it shouldn't crash
+// prompt for missing info if not provided
+// change morse to ask for more letters like password
+// class vs static vars
+//hander* -> *handler?
+/*
+const std::vector<std::string> indicators = std::vector<std::string>({ "snd", "clr", "car", "ind", "frq", "sig", "nsa", "msa", "trn", "bob", "frk" });
+const std::vector<std::string> portTypes = std::vector<std::string>({ "dvi", "parallel", "ps", "rj", "serial", "stereo" });
+*/

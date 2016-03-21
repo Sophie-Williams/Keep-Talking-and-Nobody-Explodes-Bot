@@ -1,6 +1,6 @@
 #include "ButtonModule.h"
 
-const std::string ButtonModule::pressAndHold = "press and hold";
+const std::string ButtonModule::pressAndHold = "press and hold\nff strip is blue: release on 4.\nif strip is yellow: release on 5.\notherwise: release on 1.";
 const std::string ButtonModule::pressAndRelease = "press and immediately release";
 
 bool ButtonModule::checkLitIndicators(const std::string indicator) {

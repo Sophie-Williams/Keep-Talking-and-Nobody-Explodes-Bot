@@ -21,7 +21,7 @@ std::vector<bool> ComplicatedWiresModule::solveComplicatedWiresModule(const std:
                 if (wire.star) {
                     cutIndicators.push_back(false);
                 }
-                else if (!lastSerialDigitIsOdd) {
+                else if (!_lastSerialDigitOdd) {
                     cutIndicators.push_back(true);
                 }
                 else {
@@ -59,7 +59,7 @@ std::vector<bool> ComplicatedWiresModule::solveComplicatedWiresModule(const std:
         else if (wire.color == "white") {
             cutIndicators.push_back(true);
         }
-        else if (!lastSerialDigitIsOdd) {
+        else if (!_lastSerialDigitOdd) {
             cutIndicators.push_back(true);
         }
         else {
@@ -77,7 +77,7 @@ std::vector<ComplicatedWiresModule::ComplicatedWire> ComplicatedWiresModule::par
     std::vector<ComplicatedWire> parsedWires;
     for (std::string wire : wires) {
         std::vector<std::string> wireComponents;
-        split(wire, ',', wireComponents);
+        split(wire, wireComponents, ',');
 
         ComplicatedWire result;
         result.led = (wireComponents[0] == "led");

@@ -74,16 +74,16 @@ unsigned short MemoryModule::solveMemoryModule(const unsigned short numbers[5], 
         return memoryValues[3];
     case 5:
         if (numbers[0] == 1) {
-            return calculateMemoryButtonPositionFromLabel(numbers, memoryValues[0]);
+            return  memoryValues[0];
         }
         if (numbers[0] == 2) {
-            return calculateMemoryButtonPositionFromLabel(numbers, memoryValues[1]);
+            return memoryValues[1];
         }
         if (numbers[0] == 3) {
-            return calculateMemoryButtonPositionFromLabel(numbers, memoryValues[3]);
+            return memoryValues[3];
         }
         if (numbers[0] == 4) {
-            return calculateMemoryButtonPositionFromLabel(numbers, memoryValues[2]);
+            return numbers, memoryValues[2];
         }
     }
 
