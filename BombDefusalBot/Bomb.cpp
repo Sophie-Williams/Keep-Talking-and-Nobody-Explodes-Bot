@@ -8,6 +8,7 @@
 #include "MorseCodeModule.h"
 #include "ComplicatedWiresModule.h"
 #include "WireSequenceModule.h"
+#include "MazeModule.h"
 #include "PasswordModule.h"
 #include "KnobModule.h"
 
@@ -482,7 +483,19 @@ void Bomb::handleWireSequenceModule() {
 }
 
 void Bomb::handleMazeModule() {
-    _ASSERT_EXPR(false, "Sorry, Dave. I'm afraid I can't do that.");
+    std::string mazeCoordinateString;
+    std::vector<std::string> mazeCoordinates;
+
+    std::cout << "Please enter the maze circle coordinates, triangle coordinates, and square coordinates." << std::endl
+        << "Each pair should take the form <x,y>, and each coordinate pair should be separated by a space: ";
+    std::getline(std::cin, mazeCoordinateString);
+    split(mazeCoordinateString, mazeCoordinates);
+
+    MazeModule *mazeModule = new MazeModule();
+    std::cout << "Follow this path" << std::endl;
+    mazeModule->solveMazeModule(mazeCoordinates[0], mazeCoordinates[1], mazeCoordinates[2]);
+
+    delete(mazeModule);
 }
 
 void Bomb::handlePasswordModule() {
