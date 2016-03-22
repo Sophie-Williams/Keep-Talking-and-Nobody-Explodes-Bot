@@ -15,7 +15,7 @@ std::string PasswordModule::solvePasswordModule(const int dialPosition, const st
             bool match = false;
             for (size_t j = 0; j < dialLetters.size(); ++j) {
                 if (passwords[i][dialOffset] == dialLetters[j]) {
-                    matchPosition = i;
+                    matchPosition = (short)i;
                     match = true;
                     break;
                 }

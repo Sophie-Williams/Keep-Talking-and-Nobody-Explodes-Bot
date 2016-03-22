@@ -7,6 +7,7 @@
 #include <unordered_map>
 #include <iostream>
 #include <bitset>
+#include <utility>
 
 extern std::string _serial;
 extern std::vector<std::string> _ports;
