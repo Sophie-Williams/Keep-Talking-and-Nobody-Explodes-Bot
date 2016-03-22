@@ -486,7 +486,7 @@ void Bomb::handleMazeModule() {
     std::string mazeCoordinateString;
     std::vector<std::string> mazeCoordinates;
 
-    std::cout << "Please enter the maze circle coordinates, triangle coordinates, and square coordinates." << std::endl
+    std::cout << "Please enter the maze circle coordinates, square coordinates, and triangle coordinates." << std::endl
         << "Each pair should take the form <x,y>, and each coordinate pair should be separated by a space: ";
     std::getline(std::cin, mazeCoordinateString);
     split(mazeCoordinateString, mazeCoordinates);
