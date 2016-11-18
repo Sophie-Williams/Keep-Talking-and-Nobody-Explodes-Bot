@@ -1,8 +1,5 @@
 #include "Bomb.h"
 
-#define DIAL_LETTERS 6 // TODO: move to bomb.h
-#define NUMBER_OF_PASSWORDS 35
-
 class PasswordModule {
 private:
     const std::string passwords[NUMBER_OF_PASSWORDS] = {

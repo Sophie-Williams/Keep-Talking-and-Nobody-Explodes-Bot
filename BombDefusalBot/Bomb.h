@@ -9,6 +9,9 @@
 #include <bitset>
 #include <utility>
 
+#define DIAL_LETTERS 6
+#define NUMBER_OF_PASSWORDS 35
+
 extern std::string _serial;
 extern std::vector<std::string> _ports;
 extern int _batteries;
