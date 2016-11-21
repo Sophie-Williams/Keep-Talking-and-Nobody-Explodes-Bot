@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using System.Speech.Recognition;
 using System.Speech.Synthesis;
 
@@ -6,6 +7,8 @@ namespace BombSpeechHandler
 {
     class Program
     {
+        //[DllImport("BombDefusalBot.dll")]
+
         static void Main(string[] args)
         {
             Choices basic = new Choices("start", "stop", "battery", "serial", "port", "indicator", "strike");

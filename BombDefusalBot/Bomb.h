@@ -12,60 +12,63 @@
 #define DIAL_LETTERS 6
 #define NUMBER_OF_PASSWORDS 35
 
-extern std::string _serial;
-extern std::vector<std::string> _ports;
-extern int _batteries;
-extern std::vector<std::string> _litIndicators;
-extern int _strikes;
-extern std::vector<bool> _existingPorts;
-extern bool _lastSerialDigitOdd;
-extern bool _serialHasVowel;
+namespace Bomb
+{
+    extern std::string _serial;
+    extern std::vector<std::string> _ports;
+    extern int _batteries;
+    extern std::vector<std::string> _litIndicators;
+    extern int _strikes;
+    extern std::vector<bool> _existingPorts;
+    extern bool _lastSerialDigitOdd;
+    extern bool _serialHasVowel;
 
-class Bomb {
-private:
-    enum Commands {
-        QUIT = -1,
-        INITIALIZE,
-        BASIC_WIRES,
-        BUTTON,
-        KEYPAD,
-        SIMON_SAYS,
-        WHOS_ON_FIRST,
-        MEMORY,
-        MORSE_CODE,
-        COMPLICATED_WIRES,
-        WIRE_SEQUENCE,
-        MAZE,
-        PASSWORD,
-        KNOB
+    class Bomb {
+    private:
+        enum Commands {
+            QUIT = -1,
+            INITIALIZE,
+            BASIC_WIRES,
+            BUTTON,
+            KEYPAD,
+            SIMON_SAYS,
+            WHOS_ON_FIRST,
+            MEMORY,
+            MORSE_CODE,
+            COMPLICATED_WIRES,
+            WIRE_SEQUENCE,
+            MAZE,
+            PASSWORD,
+            KNOB
+        };
+        unsigned short currentMemoryStep;
+
+        void isLastSerialDigitOdd(std::string serial);
+        void doesSerialHaveVowel(std::string serial);
+        void setPorts(std::vector<std::string> ports);
+        short parseCommand(const std::string unparsedCommand);
+        int convertTextToInteger(std::string word);
+        void initializeBomb();
+        void handleBasicWiresModule();
+        void handleButtonModule();
+        void handleKeypadModule();
+        void handleSimonSaysModule();
+        void handleWhosOnFirstModule();
+        void handleMemoryModule();
+        void handleMorseCodeModule();
+        void handleComplicatedWiresModule();
+        void handleWireSequenceModule();
+        void handleMazeModule();
+        void handlePasswordModule();
+        void handleKnobModule();
+
+    public:
+        Bomb();
+        void handleCommands();
     };
-    unsigned short currentMemoryStep;
 
-    void isLastSerialDigitOdd(std::string serial);
-    void doesSerialHaveVowel(std::string serial);
-    void setPorts(std::vector<std::string> ports);
-    short parseCommand(const std::string unparsedCommand);
-    int convertTextToInteger(std::string word);
-    void initializeBomb();
-    void handleBasicWiresModule();
-    void handleButtonModule();
-    void handleKeypadModule();
-    void handleSimonSaysModule();
-    void handleWhosOnFirstModule();
-    void handleMemoryModule();
-    void handleMorseCodeModule();
-    void handleComplicatedWiresModule();
-    void handleWireSequenceModule();
-    void handleMazeModule();
-    void handlePasswordModule();
-    void handleKnobModule();
-
-public:
-    Bomb();
-    void handleCommands();
-};
-
-std::vector<std::string> &split(const std::string &s, std::vector<std::string> &elems, char delim = ' ');
+    std::vector<std::string> &split(const std::string &s, std::vector<std::string> &elems, char delim = ' ');
+}
 
 #endif
 
