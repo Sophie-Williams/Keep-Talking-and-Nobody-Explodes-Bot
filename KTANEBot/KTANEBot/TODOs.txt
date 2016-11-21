@@ -1,0 +1,3 @@
+﻿Replace ASSERTions with exceptions or some other system
+Order modules by manual in all cases
+Global var for the bomb?

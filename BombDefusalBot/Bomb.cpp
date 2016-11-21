@@ -148,7 +148,6 @@ namespace Bomb
             switch (parsedCommand) {
             case QUIT:
                 return;
-                break;
             case INITIALIZE:
                 initializeBomb();
                 break;
@@ -189,11 +188,10 @@ namespace Bomb
                 handleKnobModule();
                 break;
             default:
+                _ASSERT_EXPR(false, "Unreachable code");
                 break;
             }
         }
-
-        _ASSERT_EXPR(false, "Unreachable code");
     }
 
     short Bomb::parseCommand(std::string unparsedCommand) {
@@ -243,9 +241,6 @@ namespace Bomb
             std::cout << "Invalid command. Please enter a valid command." << std::endl;
             return SHRT_MIN;
         }
-
-        _ASSERT_EXPR(false, "Unreachable code");
-        return SHRT_MIN;
     }
 
     int Bomb::convertTextToInteger(std::string word) {
@@ -283,9 +278,6 @@ namespace Bomb
             _ASSERT_EXPR(false, "Unreachable code");
             return -1;
         }
-
-        _ASSERT_EXPR(false, "Unreachable code");
-        return -1;
     }
 
     void Bomb::handleBasicWiresModule() {
@@ -556,7 +548,7 @@ int main(int argc, char* argv[])
 {
     Bomb::Bomb *bomb = new Bomb::Bomb();
     bomb->handleCommands();
-    std::cout << "Bomb defused!" << std::endl;
+    std::cout << "Defusal ended." << std::endl;
 
     bool playAgain = false;
     do {
