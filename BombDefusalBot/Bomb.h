@@ -1,5 +1,7 @@
-#ifndef Bomb_HEADER
-#define Bomb_HEADER
+#ifndef BOMB_HEADER
+#define BOMB_HEADER
+#define DIAL_LETTERS 6
+#define NUMBER_OF_PASSWORDS 35
 
 #include <string>
 #include <sstream>
@@ -8,9 +10,6 @@
 #include <iostream>
 #include <bitset>
 #include <utility>
-
-#define DIAL_LETTERS 6
-#define NUMBER_OF_PASSWORDS 35
 
 namespace Bomb
 {

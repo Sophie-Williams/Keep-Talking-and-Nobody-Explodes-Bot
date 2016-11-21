@@ -3,7 +3,7 @@
 namespace Bomb
 {
     bool MazeModule::solveMazeModule(const std::string circleCoordinateString, const std::string triangleCoordinateString, const std::string squareCoordinateString) {
-        unsigned short *parsedCoordinates = parseCoordinateString(triangleCoordinateString);
+        std::vector<unsigned short> parsedCoordinates = parseCoordinateString(triangleCoordinateString);
         unsigned short startX, startY;
         startX = ((parsedCoordinates[0] * 2) - 2);
         startY = ((parsedCoordinates[1] * 2) - 2);
@@ -21,7 +21,7 @@ namespace Bomb
         return false;
     }
 
-    unsigned short* MazeModule::parseCoordinateString(const std::string coordinateString) {
+    std::vector<unsigned short> MazeModule::parseCoordinateString(const std::string coordinateString) {
         _ASSERT_EXPR((coordinateString.length() == 3), "Not enough coordinates given!");
 
         std::vector<std::string> coordinatesStrings;
@@ -29,7 +29,7 @@ namespace Bomb
 
         _ASSERT_EXPR((coordinatesStrings.size() == 2), "Not enough coordinates given!");
 
-        unsigned short coordinates[2];
+        std::vector<unsigned short> coordinates(2, 0);
         coordinates[0] = stoi(coordinatesStrings[0]);
         coordinates[1] = stoi(coordinatesStrings[1]);
 
@@ -74,7 +74,14 @@ namespace Bomb
         case 8:
             return solveMazeModuleRecursive(maze8, startX, startY);
             break;
+        default:
+            _ASSERT_EXPR(false, "Unreachable code");
+            return false;
         }
+
+        _ASSERT_EXPR(false, "Unreachable code");
+
+        return false;
     }
 
     bool MazeModule::solveMazeModuleRecursive(const std::string maze[11], const unsigned short x, const unsigned short y) {

@@ -4,10 +4,9 @@ namespace Bomb
 {
     unsigned short A = 0x4, B = 0x2, C = 0x1;
     unsigned short WireSequenceModule::redCount = 0, WireSequenceModule::blueCount = 0, WireSequenceModule::blackCount = 0;
-    // TODO: Why do these cast from int?
-    unsigned short WireSequenceModule::redCuts[9]{ C, B, A, A | C, B, A | C, A | B | C, A | B, B };
-    unsigned short WireSequenceModule::blueCuts[9]{ B, A | C, B, A, B, B | C, C, A | C, A };
-    unsigned short WireSequenceModule::blackCuts[9]{ A | B | C, A | C, B, A | C, B, B | C, A | B, C, C };
+    unsigned short WireSequenceModule::redCuts[9]{ C, B, A, (unsigned short)(A | C), B, (unsigned short)(A | C), (unsigned short)(A | B | C), (unsigned short)(A | B), B };
+    unsigned short WireSequenceModule::blueCuts[9]{ B, (unsigned short)(A | C), B, A, B, (unsigned short)(B | C), C, (unsigned short)(A | C), A };
+    unsigned short WireSequenceModule::blackCuts[9]{ (unsigned short)(A | B | C), (unsigned short)(A | C), B, (unsigned short)(A | C), B, (unsigned short)(B | C), (unsigned short)(A | B), C, C };
 
     std::vector<bool> WireSequenceModule::solveWireSequenceModule(const std::vector<std::string> wireColors, const std::vector<std::string> unparsedWireEndpoints) {
         _ASSERT(wireColors.size() == unparsedWireEndpoints.size());

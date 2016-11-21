@@ -158,7 +158,7 @@ namespace Bomb
         bool visited[MAZE_WIDTH][MAZE_HEIGHT] = { 0 };
         std::vector<char> steps;
 
-        unsigned short* MazeModule::parseCoordinateString(const std::string coordinateString);
+        std::vector<unsigned short> MazeModule::parseCoordinateString(const std::string coordinateString);
         bool getMazeNumberFromCircle(const std::string circlePointString, unsigned short startX, unsigned short startY);
         bool solveMazeModuleRecursive(const std::string maze[11], const unsigned short startX, const unsigned short startY);
         void printSteps();

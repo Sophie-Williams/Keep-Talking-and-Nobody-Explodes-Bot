@@ -540,33 +540,6 @@ namespace Bomb
         delete(knobModule);
     }
 
-    /*int main(int argc, char* argv[])
-    {
-        Bomb *bomb = new Bomb();
-        bomb->handleCommands();
-        std::cout << "Bomb defused!" << std::endl;
-
-        bool playAgain = false;
-        do {
-            std::string yesOrNo;
-            std::cout << "Would you like to defuse another bomb? Y/N: ";
-            std::getline(std::cin, yesOrNo);
-
-            if (tolower(yesOrNo[0]) == 'y') {
-                bomb->handleCommands();
-                playAgain = true;
-            }
-            else {
-                playAgain = false;
-            }
-        } while (playAgain);
-
-        delete(bomb);
-        bomb = nullptr;
-
-        return 0;
-    }*/
-
     std::vector<std::string> &split(const std::string &s, std::vector<std::string> &elems, char delim) {
         std::stringstream ss(s);
         std::string item;
@@ -577,4 +550,31 @@ namespace Bomb
 
         return elems;
     }
+}
+
+int main(int argc, char* argv[])
+{
+    Bomb::Bomb *bomb = new Bomb::Bomb();
+    bomb->handleCommands();
+    std::cout << "Bomb defused!" << std::endl;
+
+    bool playAgain = false;
+    do {
+        std::string yesOrNo;
+        std::cout << "Would you like to defuse another bomb? Y/N: ";
+        std::getline(std::cin, yesOrNo);
+
+        if (tolower(yesOrNo[0]) == 'y') {
+            bomb->handleCommands();
+            playAgain = true;
+        }
+        else {
+            playAgain = false;
+        }
+    } while (playAgain);
+
+    delete(bomb);
+    bomb = nullptr;
+
+    return 0;
 }
